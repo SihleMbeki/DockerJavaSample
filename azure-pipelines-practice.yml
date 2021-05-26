@@ -19,6 +19,7 @@ stages:
      - script: echo Masakhane
        displayName: 'Run a one-line script'
 - stage: QA
+  dependsOn: Dev
   jobs:
   - job: job2
     steps:
