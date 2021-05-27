@@ -20,6 +20,17 @@ stages:
         echo Masakhane
         echo $(stageVariable)
        displayName: 'Run a one-line script'
+
+- stage: Dev
+  jobs:
+   - job: job1
+     steps:
+     - script: echo Hello, world!
+       displayName: 'Run a one-line script'
+     - script: |
+        echo Masakhane
+        echo $(stageVariable)
+       displayName: 'Run a one-line script'
      - task: CopyFiles@2
        inputs:
        SourceFolder: '$(stageVariable)'
@@ -31,16 +42,6 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
        publishLocation: 'Container'
-- stage: Dev
-  jobs:
-   - job: job1
-     steps:
-     - script: echo Hello, world!
-       displayName: 'Run a one-line script'
-     - script: |
-        echo Masakhane
-        echo $(stageVariable)
-       displayName: 'Run a one-line script'
 - stage: QA
   dependsOn: Dev
   jobs:
