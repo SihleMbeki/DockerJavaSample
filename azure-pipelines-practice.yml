@@ -30,18 +30,18 @@ stages:
      - script: |
         echo Masakhane
         echo $(stageVariable)
-       displayName: 'Run a one-line script'
-     - task: CopyFiles@2
-       inputs:
-       SourceFolder: '$(stageVariable)'
-       Contents: '**/*'
-       TargetFolder: '$(stageVariable)/report'
+    #    displayName: 'Run a one-line script'
+    #  - task: CopyFiles@2
+    #    inputs:
+    #    SourceFolder: '$(stageVariable)'
+    #    Contents: '**/*'
+    #    TargetFolder: '$(stageVariable)/report'
        
-     - task: PublishBuildArtifacts@1
-       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
-       publishLocation: 'Container'
+    #  - task: PublishBuildArtifacts@1
+    #    inputs:
+    #     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    #     ArtifactName: 'drop'
+    #    publishLocation: 'Container'
 - stage: QA
   dependsOn: Dev
   jobs:
