@@ -56,8 +56,8 @@ stages:
   jobs:
   - deployment: devDeploy
     environment: dev
-    strategy:
-     runOnce:
-       deploy:
+    # strategy:
+    #  runOnce:
+      #  deploy:
         # - script: echo Hello, world!
 
