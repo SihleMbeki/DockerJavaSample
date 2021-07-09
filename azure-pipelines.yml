@@ -15,8 +15,6 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    - task: CopyFiles@2
-      inputs:
-        Contents: '**'
-        TargetFolder: 
-  displayName: 'Run a multi-line script'
+- task: CmdLine@2
+  inputs:
+    script: 'dir'
