@@ -19,8 +19,8 @@ steps:
   inputs:
     script: 'dir'
     
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'rootArtifacts'
-    publishLocation: 'Container'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'rootArtifacts'
+    publishLocation: 'pipeline'
