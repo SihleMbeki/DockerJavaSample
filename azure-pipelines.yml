@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool: DESKTOP-R3IULL6
+pool: Default
 
 steps:
 - script: echo Hello, world!
