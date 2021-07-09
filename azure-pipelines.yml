@@ -6,8 +6,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-tool
+pool: DESKTOP-R3IULL6
 
 steps:
 - script: echo Hello, world!
